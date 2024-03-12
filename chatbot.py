@@ -1,10 +1,11 @@
 import os
 import telegram
-from telegram.ext import Updater, MessageHandler
+from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, 
+                          CallbackContext)
 #import configparser
 import logging
 # import redis
-# from CHATGPT_HKBU import HKBU_ChatGPT
+from CHATGPT_HKBU import HKBU_ChatGPT
 
 
 import requests
@@ -32,7 +33,7 @@ def main():
     # dispatcher.add_handler(CommandHandler("help", help_command))
     global chatgpt
     #chatgpt = HKBU_ChatGPT(config)
-    chatgpt = HKBU_GPT()
+    chatgpt = HKBU_ChatGPT()
     chatgpt_handler = MessageHandler(Filters.text & (~Filters.command),equiped_chatgpt)
     dispatcher.add_handler(chatgpt_handler)
     # To start the bot:
