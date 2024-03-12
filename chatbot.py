@@ -28,7 +28,8 @@ def main():
     # dispatcher.add_handler(CommandHandler("add", add))
     # dispatcher.add_handler(CommandHandler("help", help_command))
     global chatgpt
-    chatgpt = HKBU_ChatGPT(config)
+    #chatgpt = HKBU_ChatGPT(config)
+    chatgpt = HKBU_ChatGPT()
     chatgpt_handler = MessageHandler(Filters.text & (~Filters.command),equiped_chatgpt)
     dispatcher.add_handler(chatgpt_handler)
     # To start the bot:
