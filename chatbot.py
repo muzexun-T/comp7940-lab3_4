@@ -24,8 +24,12 @@ def main():
     #echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
     #dispatcher.add_handler(echo_handler)
     # on different commands - answer in Telegram
-    dispatcher.add_handler(CommandHandler("add", add))
-    dispatcher.add_handler(CommandHandler("help", help_command))
+    # dispatcher.add_handler(CommandHandler("add", add))
+    # dispatcher.add_handler(CommandHandler("help", help_command))
+    global chatgpt
+    chatgpt = HKBU_ChatGPT(config)
+    chatgpt_handler = MessageHandler(Filters.text & (~Filters.command),equiped_chatgpt)
+    dispatcher.add_handler(chatgpt_handler)
     # To start the bot:
     updater.start_polling()
     updater.idle()
