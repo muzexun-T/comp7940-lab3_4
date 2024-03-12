@@ -1,6 +1,6 @@
 import os
 import telegram
-from telegram.ext import Updater, MessageHandler, Filters
+from telegram.ext import Updater, MessageHandler
 #import configparser
 import logging
 # import redis
