@@ -9,10 +9,7 @@ class HKBU_ChatGPT():
             self.config = config_
     def submit(self,message):
         conversation = [{"role": "user", "content": message}]
-        url = (self.config['CHATGPT']['BASICURL']) +
-        "/deployments/" + (self.config['CHATGPT']['MODELNAME']) +
-        "/chat/completions/?api-version=" +
-        (self.config['CHATGPT']['APIVERSION'])
+        url = (self.config['CHATGPT']['BASICURL']) + "/deployments/" + (self.config['CHATGPT']['MODELNAME']) + "/chat/completions/?api-version=" + (self.config['CHATGPT']['APIVERSION'])
         headers = { 'Content-Type': 'application/json',
         'api-key': (self.config['CHATGPT']['ACCESS_TOKEN']) }
         payload = { 'messages': conversation }

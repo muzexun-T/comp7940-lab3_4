@@ -4,7 +4,7 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
 import configparser
 import logging
 import redis
-from ChatGPT_HKBU import HKBU_ChatGPT
+from CHATGPT_HKBU import HKBU_ChatGPT
 
 global redis1
 def main():
